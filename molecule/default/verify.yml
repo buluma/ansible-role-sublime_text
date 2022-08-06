@@ -1,0 +1,17 @@
+---
+- hosts: all
+  remote_user: root
+  become: true
+  gather_facts: true
+  vars:
+    sublime_version: 4
+  tasks:
+    - name: check sublime version
+      ansible.builtin.command: |
+        ls ~/.config
+      register: result
+      retries: 30
+
+    - name: check result
+      ansible.builtin.debug: var=result.stdout
+      when: "'sublime-text-' in result.stdout"

@@ -1,0 +1,21 @@
+---
+# Install Sublime Text on Debian
+
+- name: add public key
+  ansible.builtin.apt_key:
+    url: "{{ sublime_apt_key }}"
+    state: present
+  become: true
+
+- name: add repository
+  ansible.builtin.apt_repository:
+    repo: "{{ sublime_apt_repo }}"
+    state: present
+    update_cache: yes
+  become: true
+
+- name: install package
+  ansible.builtin.apt:
+    pkg: "sublime-text={{ sublime_version }}*"
+    state: present
+  become: true

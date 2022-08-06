@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+  vars:
+    sublime_packages:
+      - https://github.com/math2001/FileManager
+      - https://github.com/titoBouzout/SideBarEnhancements
+
+  roles:
+    - role: ansible-roles-sublime_text
