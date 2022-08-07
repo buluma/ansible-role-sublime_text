@@ -9,4 +9,4 @@
       - https://github.com/titoBouzout/SideBarEnhancements
 
   roles:
-    - role: ansible-roles-sublime_text
+    - role: ansible-role-sublime_text
