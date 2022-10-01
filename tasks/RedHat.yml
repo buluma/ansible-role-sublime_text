@@ -1,7 +1,7 @@
 ---
 # Install Sublime-Text on RedHat
 
-- name: add repository (CentOS < 7).
+- name: Add repository (CentOS < 7).
   ansible.builtin.yum_repository:
     name: "{{ sublime_repo_name }}"
     description: "{{ sublime_repo_desc }}"
@@ -11,7 +11,7 @@
   become: true
   when: ansible_distribution_major_version|int < 7
 
-- name: add repository (CentOS 7+).
+- name: Add repository (CentOS 7+).
   ansible.builtin.yum_repository:
     name: "{{ sublime_repo_name }}"
     description: "{{ sublime_repo_desc }}"
@@ -21,7 +21,7 @@
   become: true
   when: ansible_distribution_major_version|int >= 7
 
-- name: install package
+- name: Install package
   ansible.builtin.yum:
     name: "sublime-text-{{ sublime_version }}*"
     enablerepo: "{{ sublime_repo_name }}"

@@ -6,12 +6,12 @@
   vars:
     sublime_version: 4
   tasks:
-    - name: check sublime version
+    - name: Check sublime version
       ansible.builtin.command: |
         ls ~/.config
       register: result
       retries: 30
 
-    - name: check result
+    - name: Check result
       ansible.builtin.debug: var=result.stdout
       when: "'sublime-text-' in result.stdout"
