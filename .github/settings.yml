@@ -5,4 +5,4 @@
 repository:
   description: Install Sublime Text on your system.
   homepage: https://buluma.github.io/
-  topics: sublime, ansible, molecule, tox, playbook, hacktoberfest
+  topics: sublime, ansible, molecule, tox, playbook
